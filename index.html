@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PLP Talent Management Program - Application Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>PLP Talent Management Application</h1>
+    <!-- Part 2: Light/Dark Mode Toggle -->
+    <button id="toggleMode">🌙 Dark Mode</button>
+  </header>
+
+  <div class="container">
+    <!-- Part 2: Tabbed Interface -->
+    <div class="tabs">
+      <div class="tab active" data-tab="instructions">Instructions</div>
+      <div class="tab" data-tab="form">Application Form</div>
+      <div class="tab" data-tab="status">Status Updates</div>
+    </div>
+
+    <div id="instructions" class="tab-content active">
+      <h2>Instructions</h2>
+      <p>Please fill all required fields accurately. Essays must not exceed 200 words.</p>
+    </div>
+
+    <div id="form" class="tab-content">
+      <h2>Application Form</h2>
+      <form id="applicationForm">
+        <!-- Required fields (Part 3) -->
+        <input type="text" id="firstName" placeholder="First Name *" required>
+        <input type="text" id="secondName" placeholder="Second Name *" required>
+        <input type="text" id="university" placeholder="University *" required>
+        <input type="text" id="phone" placeholder="Phone Number (e.g., 07xxxxxxxx)" required>
+        <input type="email" id="email" placeholder="Email *" required>
+        <span id="emailError" class="error"></span>
+
+        <!-- Part 1: Password with Click-to-Reveal Instructions and Show/Hide -->
+        <div style="position: relative;">
+          <input type="password" id="password" placeholder="Password *" required>
+          <span id="togglePassword" style="position:absolute; right:10px; top:12px; cursor:pointer;">👁</span>
+          <span id="passwordHelp" style="margin-left:10px; cursor:pointer;">❓</span>
+        </div>
+        <span id="passwordError" class="error"></span>
+        <div id="passwordInstructions" style="display:none; font-size:0.9em; color:#6200ea;">
+          Password must be at least 6 characters long and include a special symbol (!, @, #, etc.).
+        </div>
+
+        <!-- Part 2: Dropdown Menu -->
+        <select id="programSelect">
+          <option value="">Select Program of Interest</option>
+          <option>Fullstack Developer</option>
+          <option>QA Tester</option>
+          <option>Technical Writer</option>
+          <option>Front End Developer</option>
+        </select>
+
+        <!-- Part 1 & 2: Essay with Word Counter + Progress Bar -->
+        <textarea id="essay" rows="6" placeholder="Why are you seeking admission? (Max 200 words)" required></textarea>
+        <div style="display:flex; justify-content:space-between;">
+          <span id="wordCount">0/200 words</span>
+        </div>
+        <div id="progressBar">
+          <div id="progressBarFill"></div>
+        </div>
+
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
+
+    <div id="status" class="tab-content">
+      <h2>Status Updates</h2>
+      <p>Your application progress will appear here once submitted.</p>
+    </div>
+
+    <!-- Part 2: FAQ Section -->
+    <div class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="faq-question">Do I need prior experience?</div>
+        <div class="faq-answer">No, we accept students from all backgrounds and levels of experience.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is the program free?</div>
+        <div class="faq-answer">Yes, the program is fully sponsored for selected applicants.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How will I know if I am selected?</div>
+        <div class="faq-answer">You will receive an email notification with further details.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
